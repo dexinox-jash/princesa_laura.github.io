@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura's Designer Roadmap: From Zero to Paid Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Canela:wght@300;400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'canela': ['Canela', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'graphite': '#2c3e50',
+                        'warm-white': '#faf9f6',
+                        'accent': '#e74c3c',
+                        'soft-accent': '#fdcb6e',
+                        'muted': '#95a5a6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(231, 76, 60, 0.6) 100%);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1.5rem;
+            height: 500px;
+        }
+        .bento-main {
+            grid-row: 1 / -1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        .bento-item {
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .toc-fixed {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            width: 280px;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+            z-index: 50;
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(44, 62, 80, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .main-content {
+            margin-left: 320px;
+            padding: 2rem;
+        }
+        @media (max-width: 1280px) {
+            .toc-fixed {
+                position: static;
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                height: auto;
+            }
+            .bento-main {
+                grid-row: auto;
+            }
+        }
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                height: auto;
+            }
+            .bento-main {
+                grid-row: auto;
+            }
+            .bento-item img {
+                height: auto;
+            }
+            .main-content {
+                padding: 1rem;
+            }
+            .hero-overlay h1 {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+            }
+            .hero-overlay p {
+                font-size: 1rem;
+            }
+        }
+        .citation-link {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #e74c3c;
+        }
+        .citation-link:hover {
+            background-color: rgba(231, 76, 60, 0.1);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .phase-card {
+            background: linear-gradient(135deg, #faf9f6 0%, #ffffff 100%);
+            border-left: 4px solid #e74c3c;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .quote-highlight {
+            background: linear-gradient(120deg, rgba(253, 203, 110, 0.2) 0%, rgba(253, 203, 110, 0.1) 100%);
+            border-left: 4px solid #fdcb6e;
+        }
+    </style>
+  </head>
+
+  <body class="bg-warm-white font-inter text-graphite leading-relaxed">
+
+    <!-- Table of Contents - Fixed Left Sidebar -->
+    <nav class="toc-fixed">
+      <h3 class="font-canela text-lg font-bold text-graphite mb-4">Table of Contents</h3>
+      <ul class="space-y-2 text-sm">
+        <li>
+          <a href="#executive-summary" class="block py-1 px-2 rounded hover:bg-accent hover:text-white transition-colors">Executive Summary</a>
+        </li>
+        <li>
+          <a href="#phase1" class="block py-1 px-2 rounded hover:bg-accent hover:text-white transition-colors">Phase 1: Beginner's Mindset</a>
+          <ul class="ml-4 mt-1 space-y-1 text-xs">
+            <li>
+              <a href="#phase1-focus" class="block py-1 px-2 rounded hover:bg-muted hover:text-white transition-colors">Focus Areas</a>
+            </li>
+            <li>
+              <a href="#phase1-tools" class="block py-1 px-2 rounded hover:bg-muted hover:text-white transition-colors">Tools & Resources</a>
+            </li>
+            <li>
+              <a href="#phase1-practice" class="block py-1 px-2 rounded hover:bg-muted hover:text-white transition-colors">Practice Projects</a>
+            </li>
+            <li>
+              <a href="#phase1-mindset" class="block py-1 px-2 rounded hover:bg-muted hover:text-white transition-colors">Mindset Guidance</a>
+            </li>
+            <li>
+              <a href="#phase1-earning" class="block py-1 px-2 rounded hover:bg-muted hover:text-white transition-colors">Earning Opportunities</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#phase2" class="block py-1 px-2 rounded hover:bg-accent hover:text-white transition-colors">Phase 2: Intermediate Crafter</a>
+        </li>
+        <li>
+          <a href="#phase3" class="block py-1 px-2 rounded hover:bg-accent hover:text-white transition-colors">Phase 3: Advanced Designer</a>
+        </li>
+        <li>
+          <a href="#phase4" class="block py-1 px-2 rounded hover:bg-accent hover:text-white transition-colors">Phase 4: Professional Freelancer</a>
+        </li>
+        <li>
+          <a href="#weekly-plan" class="block py-1 px-2 rounded hover:bg-accent hover:text-white transition-colors">Weekly Action Plan</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Hero Section with Bento Grid -->
+      <section class="mb-16">
+        <div class="bento-grid">
+          <!-- Main Hero Image -->
+          <div class="bento-main relative">
+            <img src="https://kimi-img.moonshot.cn/pub/icon/spinner.svg" alt="Minimalist designer workspace" class="w-full h-full object-cover" size="large" aspect="wide" style="photo" query="minimalist designer workspace" referrerpolicy="no-referrer" />
+            <div class="hero-overlay absolute inset-0 flex items-center justify-center">
+              <div class="text-center text-white px-8">
+                <h1 class="font-canela text-5xl lg:text-6xl font-light italic leading-tight mb-6">
+                  Laura's 
+                  <br>
+                  <span class="font-bold text-soft-accent">Designer Roadmap</span>
+                  <br>
+                  
+                </h1>
+                <p class="text-xl lg:text-2xl font-light opacity-90">
+                  From Zero to Paid Professional
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Supporting Images -->
+          <div class="bento-item bg-gradient-to-br from-soft-accent to-accent flex items-center justify-center">
+            <div class="text-center text-white p-6">
+              <i class="fas fa-palette text-4xl mb-4 opacity-80"></i>
+              <h3 class="font-canela text-lg font-bold">Creative Journey</h3>
+            </div>
+          </div>
+
+          <div class="bento-item bg-gradient-to-br from-graphite to-muted flex items-center justify-center">
+            <div class="text-center text-white p-6">
+              <i class="fas fa-chart-line text-4xl mb-4 opacity-80"></i>
+              <h3 class="font-canela text-lg font-bold">Professional Growth</h3>
+            </div>
+          </div>
+
+          <div class="bento-item bg-gradient-to-br from-warm-white to-gray-100 flex items-center justify-center">
+            <img src="https://kimi-img.moonshot.cn/pub/icon/spinner.svg" alt="Graphic design portfolio items" class="w-full h-full object-cover" size="medium" aspect="wide" style="photo" query="graphic design portfolio" referrerpolicy="no-referrer" />
+          </div>
+
+          <div class="bento-item bg-gradient-to-br from-accent to-soft-accent flex items-center justify-center">
+            <div class="text-center text-white p-6">
+              <i class="fas fa-rocket text-4xl mb-4 opacity-80"></i>
+              <h3 class="font-canela text-lg font-bold">Launch Your Career</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Executive Summary -->
+      <section id="executive-summary" class="mb-16 bg-white rounded-2xl p-8 shadow-lg">
+        <h2 class="font-canela text-3xl font-bold text-graphite mb-6">Executive Summary</h2>
+        <div class="prose prose-lg max-w-none">
+          <p class="text-lg leading-relaxed mb-6">
+            This roadmap is designed for you, the aspiring designer who feels lost, doubts her creativity, and is ready to build a sustainable freelance career from the ground up. It's more than just a learning plan; it's a motivational guide to transform your mindset and skills, one hour at a time.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8 my-8">
+            <div class="quote-highlight p-6 rounded-lg">
+              <h3 class="font-canela text-xl font-bold mb-4">The Challenge</h3>
+              <p>Feeling uncreative, tendency to give up easily, currently lost without knowing what to focus on, and starting from absolute beginner level with all design tools.</p>
+            </div>
+
+            <div class="quote-highlight p-6 rounded-lg">
+              <h3 class="font-canela text-xl font-bold mb-4">The Solution</h3>
+              <p>A structured 18+ month journey through four phases, with just 1 hour of daily practice, focusing on graphic design that sells and generates income.</p>
+            </div>
+          </div>
+
+          <p class="text-lg leading-relaxed">
+            We will journey through four distinct phases, from absolute beginner to confident professional, with each step crafted to build your confidence and earning potential. Remember, every expert was once a beginner. Your journey starts now.
+          </p>
+        </div>
+      </section>
+
+      <!-- Phase 1 -->
+      <section id="phase1" class="mb-16">
+        <div class="phase-card rounded-2xl p-8 mb-8">
+          <h2 class="font-canela text-4xl font-bold text-graphite mb-4">
+            Phase 1: The Beginner's Mindset & Foundational Skills
+          </h2>
+          <p class="text-lg text-muted mb-6">Months 1-3 • Building Your Foundation</p>
+
+          <div class="bg-white rounded-xl p-6 mb-8">
+            <h3 class="font-canela text-2xl font-bold mb-4">Phase Overview</h3>
+            <p class="text-lg leading-relaxed">
+              Welcome to the most crucial phase of your journey. In these first three months, your primary goal is not to create masterpieces but to build a rock-solid foundation of design knowledge and, more importantly, a resilient and growth-oriented mindset. You will learn the fundamental language of design, get comfortable with essential tools, and complete small projects that prove to yourself that you <em>can</em> do this.
+            </p>
+          </div>
+
+          <!-- Focus Areas -->
+          <div id="phase1-focus" class="mb-12">
+            <h3 class="font-canela text-2xl font-bold text-graphite mb-6">Focus Areas: Building Your Design Vocabulary</h3>
+
+            <div class="grid gap-6">
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Core Design Principles</h4>
+                <p class="mb-4">Master the fundamental principles that govern visual communication. According to industry experts, beginners often make the mistake of jumping into software without learning these basics, which leads to weak and ineffective designs <a href="https://www.linkedin.com/advice/0/heres-how-you-can-overcome-challenges-beginner-graphic-2ulhc" class="citation-link" target="_blank">[151]</a>.</p>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <strong>Key Resources:</strong>
+                  <ul class="mt-2 space-y-1">
+                    <li>• Canva Design School's free "Graphic Design Basics" course <a href="https://www.canva.com/design-school/courses/graphic-design-basics-from-the-experts" class="citation-link" target="_blank">[128]</a>
+                    </li>
+                    <li>• CalArts 11-hour "Graphic Design Tutorial for Beginners" on YouTube <a href="https://www.format.com/magazine/resources/design/free-online-graphic-design-courses" class="citation-link" target="_blank">[134]</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Introduction to Typography</h4>
+                <p class="mb-4">Typography is the art and science of arranging type. It's one of the most critical skills a designer can possess, as the vast majority of graphic design involves text.</p>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <strong>Practice Exercise:</strong> Try the <strong>"Kern Type"</strong> online game to practice your kerning skills <a href="https://fakeclients.com/blog/graphic-design-practice-exercises" class="citation-link" target="_blank">[163]</a>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Basics of Color Theory</h4>
+                <p class="mb-4">Color is a powerful tool that can evoke emotion, communicate messages, and influence behavior. Understanding color relationships and psychology is crucial for effective design.</p>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <strong>Practice Exercise:</strong> Test your color acuity with the <strong>"Hue Test" or "Munsell Hue Test"</strong>
+                  <a href="https://fakeclients.com/blog/graphic-design-practice-exercises" class="citation-link" target="_blank">[163]</a>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Understanding Layout and Composition</h4>
+                <p>Learn key compositional techniques such as the Rule of Thirds, Golden Ratio, and grid systems. These principles help organize visual elements to create balanced, aesthetically pleasing designs.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Resources -->
+          <div id="phase1-tools" class="mb-12">
+            <h3 class="font-canela text-2xl font-bold text-graphite mb-6">Tools & Resources: Starting Simple and Free</h3>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Foundational Learning Platforms</h4>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-soft-accent mt-1 mr-3"></i>
+                    <div>
+                      <strong>Canva Design School:</strong> Free "Graphic Design Basics" course in a browser-based environment <a href="https://www.canva.com/design-school/courses/graphic-design-basics-from-the-experts" class="citation-link" target="_blank">[128]</a>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-soft-accent mt-1 mr-3"></i>
+                    <div>
+                      <strong>CalArts on YouTube:</strong> 11-hour comprehensive graphic design tutorial <a href="https://www.format.com/magazine/resources/design/free-online-graphic-design-courses" class="citation-link" target="_blank">[134]</a>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-soft-accent mt-1 mr-3"></i>
+                    <div>
+                      <strong>Coursera & Udemy:</strong> Wide range of affordable graphic design courses <a href="https://octet.design/journal/free-graphic-design-courses/" class="citation-link" target="_blank">[133]</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Beginner-Friendly Design Software</h4>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fas fa-palette text-soft-accent mt-1 mr-3"></i>
+                    <div>
+                      <strong>Canva:</strong> Free, web-based platform with drag-and-drop interface <a href="https://www.linkedin.com/advice/0/youre-struggling-learn-new-skills-graphic-design-lofaf" class="citation-link" target="_blank">[152]</a>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-image text-soft-accent mt-1 mr-3"></i>
+                    <div>
+                      <strong>GIMP:</strong> Free, open-source alternative to Adobe Photoshop
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-vector-square text-soft-accent mt-1 mr-3"></i>
+                    <div>
+                      <strong>Inkscape:</strong> Free, open-source alternative to Adobe Illustrator
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-md mt-6">
+              <h4 class="font-canela text-xl font-bold mb-4 text-accent">Essential Books for Theory</h4>
+              <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h5 class="font-bold mb-2">"The Language of Graphic Design"</h5>
+                  <p class="text-sm text-muted">by Richard Poulin - breaks down fundamental concepts clearly <a href="https://thisisfun.studio/can-graphic-design-be-self-taught-or-do-you-need-a-degree/" class="citation-link" target="_blank">[165]</a>
+                  </p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h5 class="font-bold mb-2">"You Can Draw in 30 Days"</h5>
+                  <p class="text-sm text-muted">by Mark Kistler - builds confidence in creative abilities <a href="https://thisisfun.studio/can-graphic-design-be-self-taught-or-do-you-need-a-degree/" class="citation-link" target="_blank">[165]</a>
+                  </p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h5 class="font-bold mb-2">"How to Be a Graphic Designer without Losing Your Soul"</h5>
+                  <p class="text-sm text-muted">by Adrian Shaughnessy - practical advice from a self-taught designer <a href="https://selfmadedesigner.com/famous-self-taught-designers/" class="citation-link" target="_blank">[170]</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Practice Projects -->
+          <div id="phase1-practice" class="mb-12">
+            <h3 class="font-canela text-2xl font-bold text-graphite mb-6">Practice Projects: Small Wins to Build Confidence</h3>
+
+            <div class="grid gap-6">
+              <div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-soft-accent">
+                <h4 class="font-canela text-xl font-bold mb-4">Recreate Designs You Admire</h4>
+                <p class="mb-4">Find a design you love and try to recreate it from scratch. This exercise helps you understand practical application of design principles and trains your eye <a href="https://www.manypixels.co/blog/graphic-design/learn" class="citation-link" target="_blank">[164]</a>.</p>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <strong>Process:</strong> Deconstruct → Recreate → Analyze → Personalize
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-soft-accent">
+                <h4 class="font-canela text-xl font-bold mb-4">Design a Personal Logo or Monogram</h4>
+                <p class="mb-4">Create a simple symbol that represents you. This project combines typography, shape creation, and color theory in one cohesive exercise while exploring your personal identity.</p>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-soft-accent">
+                <h4 class="font-canela text-xl font-bold mb-4">Create Social Media Graphics for a Fictional Brand</h4>
+                <p class="mb-4">Design for a fictional coffee shop, clothing store, or travel blog. This practical project helps you develop consistent visual identity skills for different platforms.</p>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-soft-accent">
+                <h4 class="font-canela text-xl font-bold mb-4">Daily Design Challenges and Prompts</h4>
+                <p class="mb-4">Participate in daily design challenges to build consistency and explore new styles. These exercises are about exercising creative muscles, not creating perfect art.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mindset Guidance -->
+          <div id="phase1-mindset" class="mb-12">
+            <h3 class="font-canela text-2xl font-bold text-graphite mb-6">Mindset Guidance: Overcoming the "I'm Not Creative" Myth</h3>
+
+            <div class="quote-highlight p-8 rounded-xl mb-6">
+              <div class="text-center mb-6">
+                <i class="fas fa-lightbulb text-4xl text-soft-accent mb-4"></i>
+                <h4 class="font-canela text-2xl font-bold">Your mindset will determine your success more than any technical skill.</h4>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Embracing the Learning Process</h4>
+                <p class="mb-4">You are not expected to be a master designer on day one. Every expert was once a beginner.</p>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <em>"Allow yourself to make mistakes and learn from them"</em>
+                  <a href="https://www.linkedin.com/advice/0/youre-struggling-learn-new-skills-graphic-design-lofaf" class="citation-link" target="_blank">[152]</a>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Consistency Over Perfection</h4>
+                <p class="mb-4">Your commitment to one hour daily is perfect. Consistency is far more important than intensity.</p>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <em>"The key is to always learn to set small goals, everyday, and show up!"</em>
+                  <a href="https://www.linkedin.com/advice/0/youre-struggling-learn-new-skills-graphic-design-lofaf" class="citation-link" target="_blank">[177]</a>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Handling Self-Doubt</h4>
+                <p class="mb-4">Self-doubt is common in creative fields. Create a "wins folder" to track your progress <a href="https://blog.designcrowd.com/article/2162/7-types-of-creative-block-and-how-to-avoid-them-" class="citation-link" target="_blank">[179]</a>.</p>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <strong>Strategy:</strong> Connect with other designers and share your struggles <a href="https://www.interaction-design.org/literature/article/build-confidence-in-your-ux-design-portfolio-how-to-overcome-impostor-syndrome?srsltid=AfmBOop3iRvLr5seCaRJ5drhry0qw_2TxS5Aq6wMIWLmsUgURuD5Upb7" class="citation-link" target="_blank">[157]</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Earning Opportunities -->
+          <div id="phase1-earning" class="mb-12">
+            <h3 class="font-canela text-2xl font-bold text-graphite mb-6">Earning Opportunities: Your First Small Steps</h3>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <i class="fas fa-users text-3xl text-accent mb-4"></i>
+                <h4 class="font-canela text-xl font-bold mb-4">Friends and Family</h4>
+                <p class="text-sm">Offer services to people closest to you. Perfect low-pressure way to gain real client experience.</p>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <i class="fas fa-laptop text-3xl text-accent mb-4"></i>
+                <h4 class="font-canela text-xl font-bold mb-4">Micro-Gigs</h4>
+                <p class="text-sm">Explore Fiverr or Upwork for small, one-off projects perfect for beginners.</p>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <i class="fas fa-heart text-3xl text-accent mb-4"></i>
+                <h4 class="font-canela text-xl font-bold mb-4">Volunteering</h4>
+                <p class="text-sm">Offer design services to non-profits or local businesses for portfolio pieces.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 2 -->
+      <section id="phase2" class="mb-16">
+        <div class="phase-card rounded-2xl p-8 mb-8">
+          <h2 class="font-canela text-4xl font-bold text-graphite mb-4">
+            Phase 2: The Intermediate Crafter
+          </h2>
+          <p class="text-lg text-muted mb-6">Months 4-9 • Mastering Professional Tools</p>
+
+          <div class="bg-white rounded-xl p-6 mb-8">
+            <h3 class="font-canela text-2xl font-bold mb-4">Phase Overview</h3>
+            <p class="text-lg leading-relaxed">
+              Congratulations on completing the beginner phase! You've built a solid foundation in design theory and have a small portfolio of practice projects. Now it's time to take your skills to the next level. In this intermediate phase, you will focus on mastering the tools of the trade and building a diverse portfolio that showcases your abilities.
+            </p>
+          </div>
+
+          <!-- Focus Areas -->
+          <div class="mb-12">
+            <h3 class="font-canela text-2xl font-bold text-graphite mb-6">Focus Areas: Mastering the Tools of the Trade</h3>
+
+            <div class="grid gap-6">
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Deep Dive into Adobe Photoshop</h4>
+                <p class="mb-4">Master industry-standard photo editing and manipulation. Learn layers, masks, adjustment layers, pen tool, and healing brush tools for non-destructive editing.</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">Layers & Masks</span>
+                  <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">Pen Tool</span>
+                  <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">Adjustment Layers</span>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Mastering Adobe Illustrator</h4>
+                <p class="mb-4">Learn vector graphics creation for logos, icons, and scalable graphics. Master the pen tool, shape tools, type tools, and color management.</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">Vector Paths</span>
+                  <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">Shape Creation</span>
+                  <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">Typography</span>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Introduction to Adobe InDesign</h4>
+                <p class="mb-4">Create professional layouts for print and digital media. Learn master pages, text and image tools, and color management for multi-page documents.</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">Master Pages</span>
+                  <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">Layout Design</span>
+                  <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">Typography</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 3 -->
+      <section id="phase3" class="mb-16">
+        <div class="phase-card rounded-2xl p-8 mb-8">
+          <h2 class="font-canela text-4xl font-bold text-graphite mb-4">
+            Phase 3: The Advanced Designer
+          </h2>
+          <p class="text-lg text-muted mb-6">Months 10-18 • Specialization and Strategic Thinking</p>
+
+          <div class="bg-white rounded-xl p-6 mb-8">
+            <h3 class="font-canela text-2xl font-bold mb-4">Phase Overview</h3>
+            <p class="text-lg leading-relaxed">
+              Welcome to the advanced phase of your design journey. By now, you have a solid grasp of design principles, you're proficient in the core design software, and you've built a diverse portfolio. This phase is about refining your skills, developing a strategic mindset, and positioning yourself as an expert in your field.
+            </p>
+          </div>
+
+          <!-- Focus Areas -->
+          <div class="mb-12">
+            <h3 class="font-canela text-2xl font-bold text-graphite mb-6">Focus Areas: Specialization and Strategic Thinking</h3>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Choosing a Niche</h4>
+                <p class="mb-4">Specialize in areas like branding, web design, packaging, or social media graphics. Specialization helps you stand out and command higher rates.</p>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">Advanced Typography</h4>
+                <p class="mb-4">Master advanced techniques like hanging punctuation, optical margin alignment, and grid-based typography for sophisticated font pairing.</p>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">UX/UI Fundamentals</h4>
+                <p class="mb-4">Learn user research, persona creation, user flows, wireframing, and prototyping to create functional and user-friendly digital products.</p>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h4 class="font-canela text-xl font-bold mb-4 text-accent">The Business of Design</h4>
+                <p class="mb-4">Master pricing strategies, contract writing, financial management, client communication, and marketing your services as a business owner.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 4 -->
+      <section id="phase4" class="mb-16">
+        <div class="phase-card rounded-2xl p-8 mb-8">
+          <h2 class="font-canela text-4xl font-bold text-graphite mb-4">
+            Phase 4: The Professional Freelancer
+          </h2>
+          <p class="text-lg text-muted mb-6">Months 18+ • Business Mastery and Continuous Growth</p>
+
+          <div class="bg-white rounded-xl p-6 mb-8">
+            <h3 class="font-canela text-2xl font-bold mb-4">Phase Overview</h3>
+            <p class="text-lg leading-relaxed">
+              Congratulations! You have reached the final phase of your journey. You are now a professional freelance designer with a strong portfolio, a solid client base, and a deep understanding of the business of design. This phase is about continuous growth, business mastery, and giving back to the design community.
+            </p>
+          </div>
+
+          <!-- Focus Areas -->
+          <div class="mb-12">
+            <h3 class="font-canela text-2xl font-bold text-graphite mb-6">Focus Areas: Business Mastery and Continuous Growth</h3>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <i class="fas fa-chart-line text-4xl text-accent mb-4"></i>
+                <h4 class="font-canela text-xl font-bold mb-4">Advanced Business Strategies</h4>
+                <p class="text-sm">Master sales funnels, advertising, content marketing, and advanced client acquisition strategies.</p>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <i class="fas fa-stream text-4xl text-accent mb-4"></i>
+                <h4 class="font-canela text-xl font-bold mb-4">Diversified Income</h4>
+                <p class="text-sm">Create multiple revenue streams through templates, courses, e-books, and digital products.</p>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <i class="fas fa-sync-alt text-4xl text-accent mb-4"></i>
+                <h4 class="font-canela text-xl font-bold mb-4">Continuous Learning</h4>
+                <p class="text-sm">Stay current with design trends, new technologies, and industry best practices.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Success Metrics -->
+          <div class="bg-gradient-to-r from-accent to-soft-accent rounded-xl p-8 text-white text-center">
+            <h3 class="font-canela text-2xl font-bold mb-4">Success Metrics in Phase 4</h3>
+            <div class="grid md:grid-cols-4 gap-6">
+              <div>
+                <div class="text-3xl font-bold">$5K+</div>
+                <div class="text-sm">Monthly Revenue</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold">10+</div>
+                <div class="text-sm">Retainer Clients</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold">5+</div>
+                <div class="text-sm">Income Streams</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold">100+</div>
+                <div class="text-sm">Portfolio Pieces</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Weekly Action Plan -->
+      <section id="weekly-plan" class="mb-16">
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <h2 class="font-canela text-3xl font-bold text-graphite mb-6 text-center">Your Weekly Action Plan</h2>
+          <p class="text-lg text-center mb-8 text-muted">Making Progress Every Day</p>
+
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-graphite text-white">
+                  <th class="p-4 text-left font-canela text-lg">Day</th>
+                  <th class="p-4 text-left font-canela text-lg">Focus</th>
+                  <th class="p-4 text-left font-canela text-lg">Actionable Steps</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold text-accent">Monday</td>
+                  <td class="p-4 font-semibold">Learn & Absorb</td>
+                  <td class="p-4">Dedicate your hour to learning new theory. Watch a tutorial from Canva Design School or CalArts, read a chapter from a design book, or study a design principle in-depth. Take notes and reflect on how you can apply what you've learned.</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold text-accent">Tuesday</td>
+                  <td class="p-4 font-semibold">Practice & Create</td>
+                  <td class="p-4">It's time to put theory into practice. Work on one of your practice projects, such as recreating a design you admire or creating a social media graphic for your fictional brand. Focus on applying the principle you learned on Monday.</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold text-accent">Wednesday</td>
+                  <td class="p-4 font-semibold">Seek Feedback & Iterate</td>
+                  <td class="p-4">Share your work from Tuesday with a trusted friend, a design community, or an online forum. Ask for specific feedback. Use the constructive criticism to refine and improve your design. This is how you grow.</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold text-accent">Thursday</td>
+                  <td class="p-4 font-semibold">Explore & Get Inspired</td>
+                  <td class="p-4">Spend your hour getting inspired. Browse design platforms like Dribbble and Behance, visit a museum's website, or look at the design of everyday objects. Add inspiring designs to your "swipe file" and analyze what makes them effective.</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="p-4 font-bold text-accent">Friday</td>
+                  <td class="p-4 font-semibold">Build Your Portfolio & Brand</td>
+                  <td class="p-4">Dedicate this day to building your professional presence. Update your portfolio with your best work from the week, write a blog post about your design process, or work on your personal logo and brand identity.</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="p-4 font-bold text-accent">Weekend</td>
+                  <td class="p-4 font-semibold">Reflect, Plan, and Rest</td>
+                  <td class="p-4">Take a break from creating. Reflect on what you learned and accomplished during the week. Plan your learning and projects for the upcoming week. Most importantly, rest and recharge your creative batteries.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-8 p-6 bg-gradient-to-r from-soft-accent to-accent rounded-xl text-white text-center">
+            <h4 class="font-canela text-xl font-bold mb-4">Remember</h4>
+            <p>This roadmap is your guide, but your journey is unique. Embrace the process, celebrate your progress, and never stop learning. You have the potential to become a successful freelance graphic designer. The only thing standing between you and your dream is the decision to start. So, take that first step today. You've got this.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="text-center py-8 text-muted">
+        <p>&copy; Your journey begins now.</p>
+      </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight active section in TOC
+        function updateActiveSection() {
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('.toc-fixed a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('bg-accent', 'text-white');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('bg-accent', 'text-white');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveSection);
+        updateActiveSection(); // Initial call
+    </script>
+  </body>
+
+</html>
